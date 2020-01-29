@@ -1,0 +1,663 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Admin;
+
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author ghossain
+ */
+public class OwnerDetails extends javax.swing.JFrame {
+
+    /**
+     * Creates new form OwnerDetails
+     */
+    
+    String aemail = null;
+    String aname = null;
+    
+    /*String data[][]=new String[1000][4];
+    int rowCount=0;*/
+    
+    AdminDBConnect adbc = new AdminDBConnect();
+    
+    public OwnerDetails() {
+        initComponents();
+    }
+    
+    public OwnerDetails(String email, String name) {
+        initComponents();
+        aemail = email;
+        aname = name;
+    }
+    
+    public void setNullDetails()
+    {
+        name.setText("");
+        email.setText("");
+        phone.setText("");
+        nid.setText("");
+        address.setText("");
+        userid.setText("");
+        status.setText("");
+    }
+    
+    public void setDetails(String id)
+    {
+        try{
+            String sql = "Select * from houseownerdetails where userid = '"+id+"'";
+            ResultSet rs = adbc.getDetails(sql);
+            
+            while(rs.next())
+            {
+                name.setText(rs.getString("name"));
+                email.setText(rs.getString("email"));
+                phone.setText(rs.getString("phonenumber"));
+                nid.setText(rs.getString("nid"));
+                address.setText(rs.getString("address"));
+                userid.setText(rs.getString("userid"));
+                status.setText(rs.getString("status"));
+                
+            }
+        }catch(Exception e){
+            System.out.println("Error : " + e);
+            e.printStackTrace();
+        }
+    }
+    
+    public void unverifiedData()
+    {
+        setNullDetails();
+        try{
+            String uveri = "Unverified";
+            String sql = "Select * from houseownerdetails where status = '"+uveri+"' order by userid";
+            ResultSet rs = adbc.getDetails(sql);
+            
+            DefaultTableModel tmodel=(DefaultTableModel) table.getModel();
+            tmodel.setRowCount(0);
+            
+            while(rs.next())
+            {
+                Object o[] = {rs.getString("userid"), rs.getString("name"), rs.getString("email"), rs.getString("status")};
+                tmodel.addRow(o);
+            }
+        }catch(Exception e){
+            System.out.println("Error : " + e);
+            e.printStackTrace();
+        }
+    }
+    
+    public void verifiedData()
+    {
+        setNullDetails();
+        try{
+            String veri = "Verified";
+            String sql = "Select * from houseownerdetails where status = '"+veri+"' order by userid";
+            ResultSet rs = adbc.getDetails(sql);
+            
+            DefaultTableModel tmodel=(DefaultTableModel) table.getModel();
+            tmodel.setRowCount(0);
+            while(rs.next())
+            {
+                Object o[] = {rs.getString("userid"), rs.getString("name"), rs.getString("email"), rs.getString("status")};
+                tmodel.addRow(o);
+            }
+        }catch(Exception e){
+            System.out.println("Error : " + e);
+            e.printStackTrace();
+        }
+    }
+    
+    public void allData()
+    {
+        setNullDetails();
+        //int rowCount=0;
+        //String data[][]=new String[1000][4];
+        
+        try{
+            String sql = "Select * from houseownerdetails order by userid";
+            ResultSet rs = adbc.getDetails(sql);
+            
+            //String cols[]={"User ID","Name","Email","Status"};
+            
+            DefaultTableModel tmodel=(DefaultTableModel)table.getModel();
+            tmodel.setRowCount(0);
+            
+            while(rs.next())
+            {
+                /*String id = rs.getString("userid");
+                String namee = rs.getString("name");
+                String emal = rs.getString("email");
+                String stat = rs.getString("status");
+                /*data[rowCount][0]=id;
+                data[rowCount][1]=namee;
+                data[rowCount][2]=emal;
+                data[rowCount][3]=stat;
+                rowCount++;*/
+                //tmodel.setDataVector(data,cols);
+                
+                Object o[] = {rs.getString("userid"), rs.getString("name"), rs.getString("email"), rs.getString("status")};
+                tmodel.addRow(o);
+                
+            }
+        }catch(Exception e){
+            System.out.println("Error : " + e);
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        address = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        nid = new javax.swing.JTextField();
+        phone = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        userid = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        status = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        verifiedData = new javax.swing.JButton();
+        unverifiedData = new javax.swing.JButton();
+        allData = new javax.swing.JButton();
+        approve = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        BackButton = new javax.swing.JButton();
+        disapprove = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Student Accommodation - Admin");
+        setResizable(false);
+
+        jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane3.setBorder(null);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setAutoscrolls(true);
+        jPanel1.setPreferredSize(new java.awt.Dimension(750, 400));
+
+        address.setEditable(false);
+        address.setColumns(20);
+        address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        address.setRows(5);
+        address.setTabSize(4);
+        address.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane1.setViewportView(address);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("   Address:");
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setText("Name:");
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setText("E-mail:");
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setText("Phone:");
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("NID:");
+
+        nid.setEditable(false);
+        nid.setBackground(new java.awt.Color(255, 255, 255));
+        nid.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        nid.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        phone.setEditable(false);
+        phone.setBackground(new java.awt.Color(255, 255, 255));
+        phone.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        phone.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        email.setEditable(false);
+        email.setBackground(new java.awt.Color(255, 255, 255));
+        email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        email.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        name.setEditable(false);
+        name.setBackground(new java.awt.Color(255, 255, 255));
+        name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        name.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        userid.setEditable(false);
+        userid.setBackground(new java.awt.Color(255, 255, 255));
+        userid.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userid.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("User ID:");
+
+        status.setEditable(false);
+        status.setBackground(new java.awt.Color(255, 255, 255));
+        status.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        status.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Status:");
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User ID", "Name", "Email", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(table);
+        if (table.getColumnModel().getColumnCount() > 0) {
+            table.getColumnModel().getColumn(0).setPreferredWidth(20);
+            table.getColumnModel().getColumn(1).setPreferredWidth(130);
+            table.getColumnModel().getColumn(2).setPreferredWidth(120);
+            table.getColumnModel().getColumn(3).setPreferredWidth(25);
+        }
+
+        verifiedData.setText("Verified");
+        verifiedData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifiedDataActionPerformed(evt);
+            }
+        });
+
+        unverifiedData.setText("Unverified");
+        unverifiedData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unverifiedDataActionPerformed(evt);
+            }
+        });
+
+        allData.setText("All");
+        allData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allDataActionPerformed(evt);
+            }
+        });
+
+        approve.setText("Approve");
+        approve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approveActionPerformed(evt);
+            }
+        });
+
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel8.setText("Owner Information");
+
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back_icon.png"))); // NOI18N
+        BackButton.setBorderPainted(false);
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+
+        disapprove.setText("Disapprove");
+        disapprove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                disapproveActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(nid, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(11, 11, 11)
+                                    .addComponent(phone))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(email))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(14, 14, 14)
+                                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(10, 10, 10)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane1)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addComponent(approve, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(disapprove, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(23, 23, 23)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel8)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(allData, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(verifiedData, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(unverifiedData, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nid, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(disapprove, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(approve, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(verifiedData, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                            .addComponent(unverifiedData, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                            .addComponent(allData, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+
+        jScrollPane3.setViewportView(jPanel1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void allDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allDataActionPerformed
+        // TODO add your handling code here:
+        
+        allData();
+    }//GEN-LAST:event_allDataActionPerformed
+
+    private void verifiedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifiedDataActionPerformed
+        // TODO add your handling code here:
+        
+        verifiedData();
+    }//GEN-LAST:event_verifiedDataActionPerformed
+
+    private void unverifiedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unverifiedDataActionPerformed
+        // TODO add your handling code here:
+        
+        unverifiedData();
+    }//GEN-LAST:event_unverifiedDataActionPerformed
+
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        // TODO add your handling code here:
+        
+        DefaultTableModel model=(DefaultTableModel) table.getModel();
+        int index = table.getSelectedRow();
+        
+        String id = model.getValueAt(index, 0).toString();
+        
+        setDetails(id);
+    }//GEN-LAST:event_tableMouseClicked
+
+    private void approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveActionPerformed
+        // TODO add your handling code here:
+        
+        if("".equals(userid.getText()))
+        {
+            JOptionPane.showMessageDialog(this, "Data is not selected.");
+        }
+        else
+        {
+            String id = userid.getText();
+            String stat = "Verified";
+            String sql = "Update houseownerdetails set status = '"+stat+"' where userid = '"+id+"'";
+            adbc.setDetails(sql);
+            //verifiedData.doClick();
+            verifiedData();
+            setDetails(id);
+        }
+        
+    }//GEN-LAST:event_approveActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        // TODO add your handling code here:
+        
+        if("".equals(userid.getText()))
+        {
+            JOptionPane.showMessageDialog(this, "Data is not selected.");
+        }
+        else
+        {
+            String id = userid.getText();
+            String sql = "Delete from flatdetails where userid = '"+id+"'";
+            String sql1 = "Delete from messdetails where userid = '"+id+"'";
+            String sql2 = "Delete from subletdetails where userid = '"+id+"'";
+            String sql3 = "Delete from houseownerdetails where userid = '"+id+"'";
+            adbc.setDetails(sql);
+            adbc.setDetails(sql1);
+            adbc.setDetails(sql2);
+            adbc.setDetails(sql3);
+            JOptionPane.showMessageDialog(this, "Data is Deleted");
+            //allData.doClick();
+            allData();
+            setNullDetails();
+        }
+        
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        // TODO add your handling code here:
+
+        AdminMainPage amp = new AdminMainPage(aemail, aname);
+        amp.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void disapproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disapproveActionPerformed
+        // TODO add your handling code here:
+        
+        if("".equals(userid.getText()))
+        {
+            JOptionPane.showMessageDialog(this, "Data is not selected.");
+        }
+        else
+        {
+            String id = userid.getText();
+            String stat = "Unverified";
+            String sql = "Update houseownerdetails set status = '"+stat+"' where userid = '"+id+"'";
+            adbc.setDetails(sql);
+            //unverifiedData.doClick();
+            unverifiedData();
+            setDetails(id);
+        }
+    }//GEN-LAST:event_disapproveActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(OwnerDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(OwnerDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(OwnerDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(OwnerDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new OwnerDetails().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
+    private javax.swing.JTextArea address;
+    private javax.swing.JButton allData;
+    private javax.swing.JButton approve;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton disapprove;
+    private javax.swing.JTextField email;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField nid;
+    private javax.swing.JTextField phone;
+    private javax.swing.JTextField status;
+    private javax.swing.JTable table;
+    private javax.swing.JButton unverifiedData;
+    private javax.swing.JTextField userid;
+    private javax.swing.JButton verifiedData;
+    // End of variables declaration//GEN-END:variables
+}

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Student Accommodation - Student"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jButton2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="searchButton" max="32767" attributes="0"/>
+                                      <Component id="jLabel8" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="304" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="193" max="32767" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jTextField1" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jTextField2" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel8" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jTextField1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jTextField2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="searchButton" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="343" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Search Flat"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Area:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Rent Range:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="239">
+                <StringItem index="0" value="Select Area"/>
+                <StringItem index="1" value="Adabor"/>
+                <StringItem index="2" value="Aftabnagar"/>
+                <StringItem index="3" value="Agargaon"/>
+                <StringItem index="4" value="Ahmed Nagar"/>
+                <StringItem index="5" value="Ahmedbagh"/>
+                <StringItem index="6" value="Alambagh"/>
+                <StringItem index="7" value="Alamganj"/>
+                <StringItem index="8" value="Alinagar"/>
+                <StringItem index="9" value="Alu Bazar"/>
+                <StringItem index="10" value="Amin Bagh"/>
+                <StringItem index="11" value="Angur Jora"/>
+                <StringItem index="12" value="Arambagh"/>
+                <StringItem index="13" value="Asad Gate"/>
+                <StringItem index="14" value="Ashiyan City"/>
+                <StringItem index="15" value="Ashkona"/>
+                <StringItem index="16" value="Ashrafabad"/>
+                <StringItem index="17" value="Atipara"/>
+                <StringItem index="18" value="Azimpur"/>
+                <StringItem index="19" value="Babu Bazar"/>
+                <StringItem index="20" value="Badda"/>
+                <StringItem index="21" value="Baddanagar"/>
+                <StringItem index="22" value="Bagbari"/>
+                <StringItem index="23" value="Bahadurpur"/>
+                <StringItem index="24" value="Baily Square"/>
+                <StringItem index="25" value="Bakshi"/>
+                <StringItem index="26" value="Banagram"/>
+                <StringItem index="27" value="Banani"/>
+                <StringItem index="28" value="Banani DOHS"/>
+                <StringItem index="29" value="Banasree"/>
+                <StringItem index="30" value="Bangla Bazar"/>
+                <StringItem index="31" value="Bangla Motor"/>
+                <StringItem index="32" value="Bangladesh Bank Colony"/>
+                <StringItem index="33" value="Bangsal"/>
+                <StringItem index="34" value="Banianagar"/>
+                <StringItem index="35" value="Bank Colony"/>
+                <StringItem index="36" value="Bara Katra"/>
+                <StringItem index="37" value="Bara Maghbazar"/>
+                <StringItem index="38" value="Barentek"/>
+                <StringItem index="39" value="Baridhara"/>
+                <StringItem index="40" value="Baridhara DOHS"/>
+                <StringItem index="41" value="Bashabo"/>
+                <StringItem index="42" value="Begum Bazar"/>
+                <StringItem index="43" value="Begumganj"/>
+                <StringItem index="44" value="Bibir Bazar"/>
+                <StringItem index="45" value="Bijoynagar"/>
+                <StringItem index="46" value="Boro Moghbazar"/>
+                <StringItem index="47" value="Box Nagar"/>
+                <StringItem index="48" value="Brahman Chiron"/>
+                <StringItem index="49" value="Byshteki"/>
+                <StringItem index="50" value="Chalk Bazar"/>
+                <StringItem index="51" value="Chamilibagh"/>
+                <StringItem index="52" value="Chankharpool"/>
+                <StringItem index="53" value="Chhaya Bithi Housing"/>
+                <StringItem index="54" value="Chhota Katra"/>
+                <StringItem index="55" value="Chowdhury Para Malibagh"/>
+                <StringItem index="56" value="Commissoner Bari"/>
+                <StringItem index="57" value="Companiganj"/>
+                <StringItem index="58" value="Court House Street"/>
+                <StringItem index="59" value="D.I.T.Area"/>
+                <StringItem index="60" value="Dakshin Khan"/>
+                <StringItem index="61" value="Dakshin Mugda Para"/>
+                <StringItem index="62" value="Dalpur"/>
+                <StringItem index="63" value="Darus Salam"/>
+                <StringItem index="64" value="Dawanpara"/>
+                <StringItem index="65" value="Dayaganj"/>
+                <StringItem index="66" value="Dhaka College Area"/>
+                <StringItem index="67" value="Dhaka Medical College"/>
+                <StringItem index="68" value="Dhalka Nagar"/>
+                <StringItem index="69" value="Dhanmondi"/>
+                <StringItem index="70" value="Dholairpar"/>
+                <StringItem index="71" value="Dilkusha"/>
+                <StringItem index="72" value="East Baragram"/>
+                <StringItem index="73" value="Eskaton"/>
+                <StringItem index="74" value="Faidabad"/>
+                <StringItem index="75" value="Fakira Pool"/>
+                <StringItem index="76" value="Farashganj"/>
+                <StringItem index="77" value="Faridabad "/>
+                <StringItem index="78" value="Gabtoli "/>
+                <StringItem index="79" value="Ganaktuli "/>
+                <StringItem index="80" value="Gendaria "/>
+                <StringItem index="81" value="Goalghat "/>
+                <StringItem index="82" value="Goalnagar "/>
+                <StringItem index="83" value="Golartek "/>
+                <StringItem index="84" value="Goran "/>
+                <StringItem index="85" value="Gulbagh "/>
+                <StringItem index="86" value="Gulistan "/>
+                <StringItem index="87" value="Gulshan -1  "/>
+                <StringItem index="88" value="Gulshan-2 "/>
+                <StringItem index="89" value="Gupibagh Haji "/>
+                <StringItem index="90" value="Para Hasan Nagar "/>
+                <StringItem index="91" value="Hatirpool Bazar "/>
+                <StringItem index="92" value="Hatkhola Hazaribagh "/>
+                <StringItem index="93" value="Hazi Bari "/>
+                <StringItem index="94" value="Hazrat Nagar "/>
+                <StringItem index="95" value="Ibrahinpur "/>
+                <StringItem index="96" value="Islambagh "/>
+                <StringItem index="97" value="Islamnagar "/>
+                <StringItem index="98" value="Islampur "/>
+                <StringItem index="99" value="Jafrabad "/>
+                <StringItem index="100" value="Jaolahati "/>
+                <StringItem index="101" value="Jatrabari "/>
+                <StringItem index="102" value="Jeleypara "/>
+                <StringItem index="103" value="Jhigatola "/>
+                <StringItem index="104" value="Jurain "/>
+                <StringItem index="105" value="Kadamtala "/>
+                <StringItem index="106" value="Kafrul "/>
+                <StringItem index="107" value="Kakrail "/>
+                <StringItem index="108" value="Kalabagan "/>
+                <StringItem index="109" value="Kamalapur "/>
+                <StringItem index="110" value="Kaptan Bazar "/>
+                <StringItem index="111" value="Karatitola "/>
+                <StringItem index="112" value="Karimullah Bagh "/>
+                <StringItem index="113" value="Kather Pool "/>
+                <StringItem index="114" value="Kawranbazar "/>
+                <StringItem index="115" value="Kazipara "/>
+                <StringItem index="116" value="Khamer Bari"/>
+                <StringItem index="117" value="Khilgaon "/>
+                <StringItem index="118" value="Khilkhat "/>
+                <StringItem index="119" value="Kumartuly "/>
+                <StringItem index="120" value="Kuril "/>
+                <StringItem index="121" value="Kusumbag "/>
+                <StringItem index="122" value="Lakshmi Bazar "/>
+                <StringItem index="123" value="Lalbagh "/>
+                <StringItem index="124" value="Lalmatia "/>
+                <StringItem index="125" value="Madartek "/>
+                <StringItem index="126" value="Madhu Bazar "/>
+                <StringItem index="127" value="Malibagh "/>
+                <StringItem index="128" value="Manikdey "/>
+                <StringItem index="129" value="Matikata "/>
+                <StringItem index="130" value="Mazibari "/>
+                <StringItem index="131" value="Meradia "/>
+                <StringItem index="132" value="Merul Badda "/>
+                <StringItem index="133" value="Middle Badda "/>
+                <StringItem index="134" value="Mir Hazirbagh "/>
+                <StringItem index="135" value="Mirpur Ceramic "/>
+                <StringItem index="136" value="Mirpur Colony "/>
+                <StringItem index="137" value="Mirpur Section-1 "/>
+                <StringItem index="138" value="Mirpur Section-10  "/>
+                <StringItem index="139" value="Mirpur Section-11 "/>
+                <StringItem index="140" value="Mirpur Section-12  "/>
+                <StringItem index="141" value="Mirpur Section-14 "/>
+                <StringItem index="142" value="Mirpur Section-2 "/>
+                <StringItem index="143" value="Mirpur Section-6  "/>
+                <StringItem index="144" value="Mirpur Section-7  "/>
+                <StringItem index="145" value="Mohakhali "/>
+                <StringItem index="146" value="Mohammadpur "/>
+                <StringItem index="147" value="Mokim Katra "/>
+                <StringItem index="148" value="Mominbagh "/>
+                <StringItem index="149" value="Moneshwar "/>
+                <StringItem index="150" value="Monipur "/>
+                <StringItem index="151" value="Monipuripara "/>
+                <StringItem index="152" value="Moshundi "/>
+                <StringItem index="153" value="Motijheil "/>
+                <StringItem index="154" value="Moulvi Bazar "/>
+                <StringItem index="155" value="Munshihati "/>
+                <StringItem index="156" value="Muradpur-1 "/>
+                <StringItem index="157" value="Muradpur-2 "/>
+                <StringItem index="158" value="Murgitola "/>
+                <StringItem index="159" value="Nabin Bag Bank Colony "/>
+                <StringItem index="160" value="Nadda Para "/>
+                <StringItem index="161" value="Namapara "/>
+                <StringItem index="162" value="Narinda "/>
+                <StringItem index="163" value="Nawab Katara "/>
+                <StringItem index="164" value="Nawabbari "/>
+                <StringItem index="165" value="Naya Bazar "/>
+                <StringItem index="166" value="Naya Paltan "/>
+                <StringItem index="167" value="Nazira Bazar "/>
+                <StringItem index="168" value="Newmarket "/>
+                <StringItem index="169" value="Neyatola "/>
+                <StringItem index="170" value="Niketan "/>
+                <StringItem index="171" value="Nikunjo "/>
+                <StringItem index="172" value="Nilkhet "/>
+                <StringItem index="173" value="Nilkhet "/>
+                <StringItem index="174" value="Babupura "/>
+                <StringItem index="175" value="North Badda "/>
+                <StringItem index="176" value="Nowagaon "/>
+                <StringItem index="177" value="Nowapara "/>
+                <StringItem index="178" value="Nurerchala "/>
+                <StringItem index="179" value="Paikpara "/>
+                <StringItem index="180" value="Parbata "/>
+                <StringItem index="181" value="Parer Bagh "/>
+                <StringItem index="182" value="Paribagh "/>
+                <StringItem index="183" value="Patuatuly "/>
+                <StringItem index="184" value="Pilkhana "/>
+                <StringItem index="185" value="Pollabi "/>
+                <StringItem index="186" value="Postagola "/>
+                <StringItem index="187" value="Purana Paltan "/>
+                <StringItem index="188" value="Puratan Mogultoli Purba "/>
+                <StringItem index="189" value="Purba "/>
+                <StringItem index="190" value="Razabazar "/>
+                <StringItem index="191" value="Rajarbagh "/>
+                <StringItem index="192" value="Ramna "/>
+                <StringItem index="193" value="Rampura "/>
+                <StringItem index="194" value="Rasulpur "/>
+                <StringItem index="195" value="Rayer Bazar "/>
+                <StringItem index="196" value="Rishi Para "/>
+                <StringItem index="197" value="Islamabed "/>
+                <StringItem index="198" value="Rokanpur "/>
+                <StringItem index="199" value="Royer Bazar "/>
+                <StringItem index="200" value="Staff Roysaheb Bazar "/>
+                <StringItem index="201" value="Rupnagar "/>
+                <StringItem index="202" value="Sabujbagh "/>
+                <StringItem index="203" value="Saidabad "/>
+                <StringItem index="204" value="Sawrapara "/>
+                <StringItem index="205" value="Science Laboratory "/>
+                <StringItem index="206" value="Segun Bagicha "/>
+                <StringItem index="207" value="Senpara "/>
+                <StringItem index="208" value="Shahidbagh "/>
+                <StringItem index="209" value="Shahidnagar "/>
+                <StringItem index="210" value="Shahjadpur "/>
+                <StringItem index="211" value="Shahjahanpur "/>
+                <StringItem index="212" value="Shakari Nagar "/>
+                <StringItem index="213" value="Shakertek "/>
+                <StringItem index="214" value="Shakhari Bazar  "/>
+                <StringItem index="215" value="Shamibagh "/>
+                <StringItem index="216" value="Shantibagh "/>
+                <StringItem index="217" value="Shantinagar "/>
+                <StringItem index="218" value="Shikaritola "/>
+                <StringItem index="219" value="Siddeswary "/>
+                <StringItem index="220" value="Siddique Bazar "/>
+                <StringItem index="221" value="Sonatengar "/>
+                <StringItem index="222" value="South Badda "/>
+                <StringItem index="223" value="Sowarighat "/>
+                <StringItem index="224" value="Sultanganj"/>
+                <StringItem index="225" value="Takerhat"/>
+                <StringItem index="226" value="Tallabagh "/>
+                <StringItem index="227" value="Taltola "/>
+                <StringItem index="228" value="Tegturipara "/>
+                <StringItem index="229" value="Tejkunipara "/>
+                <StringItem index="230" value="Tennery "/>
+                <StringItem index="231" value="Thatary Bazar "/>
+                <StringItem index="232" value="Topkhana "/>
+                <StringItem index="233" value="Uttar Khan "/>
+                <StringItem index="234" value="Uttar Mousondi "/>
+                <StringItem index="235" value="Uttara ABM City "/>
+                <StringItem index="236" value="Uttara Model Town "/>
+                <StringItem index="237" value="Vasantek "/>
+                <StringItem index="238" value="Wari"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value=" "/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="to"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="0">
+                    <Column editable="false" title="Title" type="java.lang.Object"/>
+                    <Column editable="false" title="Rent" type="java.lang.Object"/>
+                    <Column editable="false" title="Area" type="java.lang.Object"/>
+                    <Column editable="false" title="Date" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="250" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="25" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="25" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="searchButton">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Search"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Images/back_icon.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
